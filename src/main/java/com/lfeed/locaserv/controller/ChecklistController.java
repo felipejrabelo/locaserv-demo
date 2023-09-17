@@ -6,7 +6,6 @@ import com.lfeed.locaserv.services.ChecklistService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/checklists")
@@ -24,8 +23,8 @@ public class ChecklistController {
     }
 
     @PostMapping
-    public ResponseEntity<Mono<ChecklistAnswers>> saveChecklist(@RequestBody ChecklistAnswers checklistAnswers) {
+    public ResponseEntity<Object> saveChecklist(@RequestBody ChecklistAnswers checklistAnswers) {
         this.checklistService.saveChecklist(checklistAnswers);
-        return ResponseEntity.ok(Mono.just(checklistAnswers));
+        return ResponseEntity.ok(null);
     }
 }
