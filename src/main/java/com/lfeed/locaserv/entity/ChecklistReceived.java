@@ -1,9 +1,6 @@
 package com.lfeed.locaserv.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -11,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @Table(name="checklist_received")
 public class ChecklistReceived {
     @Id
@@ -18,6 +16,6 @@ public class ChecklistReceived {
     private Long idChecklist;
     private String idVehicle;
     private Long odometer;
-    private String createdBy;
-    private String createdAt;
+    private String createdby;
+    private String createdat;
 }

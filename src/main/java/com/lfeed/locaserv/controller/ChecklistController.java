@@ -25,6 +25,7 @@ public class ChecklistController {
 
     @PostMapping
     public ResponseEntity<Mono<ChecklistAnswers>> saveChecklist(@RequestBody ChecklistAnswers checklistAnswers) {
+        this.checklistService.saveChecklist(checklistAnswers);
         return ResponseEntity.ok(Mono.just(checklistAnswers));
     }
 }
