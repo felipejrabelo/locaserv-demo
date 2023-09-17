@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,5 +19,5 @@ public class ChecklistReceived {
     private String idVehicle;
     private Long odometer;
     private String createdby;
-    private String createdat;
+    private LocalDateTime createdat;
 }

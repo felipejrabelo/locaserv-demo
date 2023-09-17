@@ -22,6 +22,7 @@ public class ChecklistController {
         return ResponseEntity.ok(this.checklistService.getAll());
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity<Object> saveChecklist(@RequestBody ChecklistAnswers checklistAnswers) {
         this.checklistService.saveChecklist(checklistAnswers);

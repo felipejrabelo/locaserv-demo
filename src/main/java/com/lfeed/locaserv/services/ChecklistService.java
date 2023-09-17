@@ -10,6 +10,7 @@ import com.lfeed.locaserv.repository.ChecklistRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,7 @@ public class ChecklistService {
                 .idVehicle(checklistAnswers.getIdVehicle())
                 .odometer(checklistAnswers.getOdometer())
                 .createdby(checklistAnswers.getCreatedby())
+                .createdat(LocalDateTime.now())
                 .build();
 
         this.checklistReceivedRepository.save(checklistReceived).subscribe(ch ->{
