@@ -46,6 +46,8 @@ public class ChecklistService {
         this.checklistReceivedRepository.save(checklistReceived).subscribe(ch ->{
             this.checklistItemsReceivedRepository.saveAll(mapAppItemsResponses(checklistAnswers, ch.getId()))
                     .subscribe();
+        }, error -> {
+            throw new RuntimeException(error.getMessage());
         });
     }
 
